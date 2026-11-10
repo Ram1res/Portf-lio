@@ -10,7 +10,7 @@ A página única começa pela apresentação pessoal, segue por cinco projetos a
 
 Uma publicação editorial numerada, minimalista e cinematográfica, que alterna páginas de fundo preto e branco. Tipografia, retratos, filmes, peças gráficas e legendas conduzem a narrativa; a composição prioriza mídia real e sequências assimétricas, não cards genéricos. O roxo aparece com parcimônia em pontos de ênfase, navegação, foco e interação.
 
-Na abertura, a assinatura tipográfica de Víctor e uma apresentação curta estabelecem a identidade, sem retrato ou menu no topo. A foto recortada e sem fundo ocupa um espaço maior na seção “Sobre”. Os projetos variam o arranjo do título, contexto e mídia de acordo com cada trabalho.
+Na abertura, o nome centralizado em dois pesos aparece em tamanho contido e surge por uma animação de opacidade; o acento roxo de Víctor, a área de atuação e Brasília — DF estabelecem a identidade. Uma linha vertical fina com luz roxa descendente indica a rolagem, e o menu de capítulos fica centralizado abaixo. A foto colorida ocupa um espaço maior na seção “Sobre”, sem legenda visível; o nome no texto de apresentação recebe o roxo da identidade. As imagens dos projetos não exibem legendas pequenas abaixo delas, mantendo descrições alternativas acessíveis. Os projetos variam o arranjo do título, contexto e mídia de acordo com cada trabalho.
 
 ### Tipografia e cor
 
@@ -21,7 +21,7 @@ Na abertura, a assinatura tipográfica de Víctor e uma apresentação curta est
 ## Estrutura e conteúdo
 
 1. Abertura e navegação por capítulos: Audiovisual, Design, Sobre, Trajetória e Contato.
-2. Projetos audiovisuais: Comunicação Comunitária — ComCom; The Garage — Formula SAE UnB; Apuama Experience; Recanto das Flores; e Diego Zaka.
+2. Projetos audiovisuais: The Garage — Formula SAE UnB; InApuama; Documentário; Recanto das Flores; e Diego Zaka.
 3. Seleção de seis peças do portfólio de design, com acesso ao PDF completo.
 4. Perfil, ferramentas e especialidades, experiência profissional, contato e rodapé.
 
@@ -34,18 +34,18 @@ Em telas largas, a abertura combina texto e retrato, e os projetos usam uma comp
 ## Interação e acessibilidade
 
 - Links da abertura, dos capítulos e do rodapé navegam por âncoras.
-- A assinatura da abertura entra em uma sequência curta; retratos e imagens surgem em recortes editoriais quando entram na área visível.
-- Fotografias e peças de direção de arte abrem em um visualizador de tela cheia. A navegação avança apenas dentro da galeria atual, por botões, setas do teclado ou gesto horizontal no celular; Escape e o botão de fechar encerram a visualização.
-- Revelações de conteúdo são discretas e não impedem a leitura sem `IntersectionObserver`; animações respeitam `prefers-reduced-motion`.
-- Vídeos locais usam controles nativos, `preload="none"` e reprodução mediante ação explícita. Erros anunciam uma alternativa para abrir o arquivo.
-- The Garage usa um `iframe` do YouTube com título e carregamento adiado. Os filmes Apuama também oferecem links para suas versões no YouTube.
+- O nome da abertura surge com uma animação curta de opacidade. O conteúdo permanece estável durante a rolagem, sem efeitos de revelação que pisquem nas bordas da tela.
+- A seleção de design ocupa uma sequência de páginas em tela cheia, que avançam com a rolagem; cada peça pode ser ampliada e navegada na galeria.
+- Fotografias e peças de direção de arte abrem em um visualizador de tela cheia, sem legendas pequenas abaixo das imagens na página. A navegação avança apenas dentro da galeria atual, por botões, setas do teclado ou gesto horizontal no celular; Escape e o botão de fechar encerram a visualização. As descrições alternativas permanecem disponíveis para tecnologias assistivas.
+- Animações são reservadas à abertura e à visualização ampliada; o conteúdo não pisca nem é ocultado durante a rolagem.
+- The Garage, InApuama e Documentário usam embeds do YouTube com títulos acessíveis e carregamento adiado; cada filme também oferece um link direto para assistir no YouTube.
 - A página mantém estrutura semântica, link para pular ao conteúdo, foco visível, textos alternativos, rótulos de mídia e navegação por teclado.
 
 ## Ativos
 
-- `assets/images/victor-cutout.png`: retrato recortado, sem fundo, usado na seção “Sobre”.
+- `assets/images/victor-about.jpg`: retrato em cores usado na seção “Sobre”, sem recorte artificial do cabelo.
 - `assets/images/recanto-01.jpg`–`recanto-03.jpg` e `assets/images/diego-01.jpg`–`diego-03.jpg`: fotografias dos projetos Recanto das Flores e Diego Zaka.
 - `assets/images/design/portfolio-page-04.jpg`–`portfolio-page-09.jpg`: imagens derivadas das páginas 4–9 do PDF original de design.
-- Os vídeos locais da raiz incluem o documentário ComCom e dois filmes Apuama. Os caminhos relativos e codificados no HTML dependem de os arquivos originais permanecerem no lugar.
+- Os MP4s originais de InApuama permanecem na raiz, mas a página usa os vídeos publicados no YouTube, sem depender de incluir esses arquivos grandes no deploy.
 
 Preserve os arquivos originais. Ao substituir ou adicionar mídia, atualize caminhos, descrições alternativas e legendas para corresponder ao material real. Não invente créditos, links, imagens ou resultados; só substitua placeholders quando o material estiver confirmado.

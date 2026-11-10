@@ -42,7 +42,7 @@ Visitors browse a single-page portfolio on desktop or mobile, explore selected p
 
 ## Evidence on Hand
 
-- `Doc ComCom 2.2024 v3 (1080p).mp4` is available locally.
+- The original documentary MP4 remains available locally; its selected project is embedded from YouTube on the site.
 - Local Apuama video files are available at the project root.
 - Local Diego Zaka and Recanto das Flores photographs are available at the project root, with additional project archives.
 - The user supplied a portrait with transparent background and a portrait with its background, plus the Gilroy font family.

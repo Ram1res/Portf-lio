@@ -1,27 +1,5 @@
 document.documentElement.classList.add("js");
 
-const revealItems = document.querySelectorAll(
-  ".reveal, .image-plate, .design-plate, .about-portrait-wrap"
-);
-
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-entered");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-entered"));
-}
-
 const lightbox = document.querySelector(".lightbox-dialog");
 const lightboxImage = lightbox.querySelector(".lightbox-image");
 const lightboxCaption = lightbox.querySelector("#lightbox-caption");
@@ -123,46 +101,4 @@ lightboxImage.addEventListener("pointerup", (event) => {
 
 lightboxImage.addEventListener("pointercancel", () => {
   touchStartX = null;
-});
-
-document.querySelectorAll(".local-film").forEach((shell) => {
-  const video = shell.querySelector("video");
-  const playButton = shell.querySelector(".play-cover");
-  const status = shell.querySelector(".media-status");
-
-  const reportPlaybackError = () => {
-    status.replaceChildren();
-    status.append("Não foi possível reproduzir este vídeo. ");
-
-    const source = video.querySelector("source");
-    const recoveryLink = document.createElement("a");
-    recoveryLink.href = source.src;
-    recoveryLink.target = "_blank";
-    recoveryLink.rel = "noopener noreferrer";
-    recoveryLink.textContent = "Abrir o arquivo em outra aba";
-    status.append(recoveryLink);
-  };
-
-  playButton.addEventListener("click", () => {
-    status.replaceChildren();
-
-    const playback = video.play();
-    if (playback && typeof playback.catch === "function") {
-      playback.catch(reportPlaybackError);
-    }
-  });
-
-  video.addEventListener("playing", () => {
-    shell.classList.add("is-playing");
-  });
-
-  video.addEventListener("pause", () => {
-    shell.classList.remove("is-playing");
-  });
-
-  video.addEventListener("ended", () => {
-    shell.classList.remove("is-playing");
-  });
-
-  video.addEventListener("error", reportPlaybackError);
 });
